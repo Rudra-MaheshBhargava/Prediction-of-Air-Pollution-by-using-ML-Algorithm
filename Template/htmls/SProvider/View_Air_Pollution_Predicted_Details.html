@@ -1,0 +1,122 @@
+{% extends 'SProvider/design1.html' %}
+{% block researchblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style6 {color: #FF0000}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p align="center" class="text-uppercase pull-center style1">View All Air Quality or Pollution Prediction Details !!! </p>
+                            <hr>
+                            <div class="tweettext">
+                                 <table border="5" bordercolor="#FF00FF">
+
+                       <tr>
+
+
+<td bgcolor="#FF0000"><span class="style8">Air Measured Id</span></td>
+<td bgcolor="#FF0000"><span class="style8">City</span></td>
+<td bgcolor="#FF0000"><span class="style8">Date</span></td>
+<td bgcolor="#FF0000"><span class="style8">PM2.5</span></td>
+<td bgcolor="#FF0000"><span class="style8">PM10</span></td>
+<td bgcolor="#FF0000"><span class="style8">NO</span></td>
+<td bgcolor="#FF0000"><span class="style8">NO2</span></td>
+<td bgcolor="#FF0000"><span class="style8">Nox</span></td>
+<td bgcolor="#FF0000"><span class="style8">NH3</span></td>
+<td bgcolor="#FF0000"><span class="style8">CO</span></td>
+<td bgcolor="#FF0000"><span class="style8">SO2</span></td>
+<td bgcolor="#FF0000"><span class="style8">O3</span></td>
+<td bgcolor="#FF0000"><span class="style8">Benzene</span></td>
+<td bgcolor="#FF0000"><span class="style8">Toluene</span></td>
+<td bgcolor="#FF0000"><span class="style8">Xylene</span></td>
+<td bgcolor="#FF0000"><span class="style8">AQI</span></td>
+<td bgcolor="#FF0000"><span class="style8">Prediction</span></td>
+
+
+
+                      </tr>
+                            {% for object in objs %}
+                      <tr>
+
+
+                          <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.aid}}</div></td>
+                            <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.City}}</div></td>
+                            <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.Date}}</div></td>
+                          <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.PM2andhalf}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.PM10}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.NO}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.NO2}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.Nox}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.NH3}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.CO}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.SO2}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.O3}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.Benzene}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.Toluene}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.Xylene}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.AQI}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.Prediction}}</div></td>
+
+
+
+                        </tr>
+
+                                        {% endfor %}
+                      </table>
+
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>
